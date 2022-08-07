@@ -1,20 +1,53 @@
 <html>
-<ul id="list"></ul>
+
+<p> Alexei had a very difficult and stressful week and on weekend he decided to go to a nearby forest to relax. When he entered into the forest he suddenly saw..  <br> <span id="page_1"></span> 
+</p>
+<br>
+<p>  <span id="page_2"></span> 
+</p>
 
 
+<img id="pic" width="50%">
+
+<button id="turn the page">turn the page</button>
 
 <script>
-var item, fruits;
+var array;
+
+function randomInt(n) {
+  // Return a random number from in [0, n[
+  return Math.floor(Math.random()*n);
+}
+
+function randomMember(arr) {
+  // Return a random member of the array
+  return arr[randomInt(arr.length)]
+}
 
 
-fruits = ['apppple', 'mango', 'Melon', 'Orange', 'banana'];
+array = ['a', 'b', 'c'];
 
-fruits.forEach((item) => {
-  let element_list = document.getElementById('list');
-  let new_ul = document.createElement('ul');
-  new_ul.innerText = item;
 
-  element_list.appendChild(new_ul);
+document.getElementById('turn the page').addEventListener('click', (event) => {
+  if (randomMember(array) == 'a') {
+    let element_pic = document.getElementById('pic');
+    element_pic.setAttribute("src", 'https://www.animationsource.org/sites_content/watership_down/upload/articles/1(2).jpg');
+    let element_page_2 = document.getElementById('page_2');
+    element_page_2.innerText = 'rabbits, many many rabbits, playing with each other..';
+  }
+  if (randomMember(array) == 'b') {
+    let element_pic2 = document.getElementById('pic');
+    element_pic2.setAttribute("src", 'https://i.ytimg.com/vi/RCX-mPstrPU/hqdefault.jpg');
+    let element_page_22 = document.getElementById('page_2');
+    element_page_22.innerText = 'Swans, a family of swans swimming in the river.';
+  }
+  if (randomMember(array) == 'c') {
+    let element_pic3 = document.getElementById('pic');
+    element_pic3.setAttribute("src", 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4OS5JBeMXimUOR8DgeIYBaIn5nzG0Wa3WaQ&usqp=CAU');
+    let element_page_23 = document.getElementById('page_2');
+    element_page_23.innerText = 'Aliens, and their spaceship.';
+  }
+
 });
 
 
